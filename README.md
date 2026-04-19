@@ -1,43 +1,59 @@
 # 🚀 Mini ERP System (Excel VBA)
 
-A **layered, failure-aware Mini ERP system** built with **Excel VBA**, designed to simulate real-world backend architecture including transaction handling, retry mechanisms, and system monitoring.
+<p align="center">
+  <img src="https://img.shields.io/badge/status-active-success" />
+  <img src="https://img.shields.io/badge/platform-Excel%20VBA-blue" />
+  <img src="https://img.shields.io/badge/architecture-layered-orange" />
+</p>
 
 ---
 
-## 🎯 Key Features
+> ⚡ A layered, failure-aware ERP simulation built in Excel VBA with transaction handling, retry mechanisms, and system monitoring — designed to reflect real-world backend architecture.
 
-* 🧱 **Layered Architecture**
-
-  * Service / Policy / Repository separation
-* 🔁 **Retry & Recovery System**
-
-  * Handles partial failures and resumes safely
-* ♻️ **Idempotent Operations**
-
-  * Prevents duplicate processing
-* 🔒 **Locking Mechanism**
-
-  * Prevents concurrent conflicts with timeout handling
-* 📊 **Reconciliation Engine**
-
-  * Ensures system data consistency
-* 🧪 **Automated Test Engine**
-
-  * PASS / FAIL validation with real business errors
-* 📈 **System Monitoring Dashboard**
-
-  * Live system status and metrics
+A structured mini ERP system that manages **documents, stock, ledger operations, and system state** with strong emphasis on **architecture, reliability, and error handling**.
 
 ---
 
-## 🧠 Architecture Overview
+## 🎬 Demo
+
+<p align="center">
+  <img src="assets/demo/test_engine_run.gif" width="100%" />
+</p>
+
+---
+
+## 🚀 Core Capabilities
+
+* Transaction-based document processing
+* Automated stock & ledger integration
+* Retry & recovery handling
+* System-wide validation rules
+* Test-driven verification system
+
+---
+
+## ✨ Key Features
+
+* 🧱 Layered architecture (Service / Policy / Repository)
+* 🔁 Retry & Recovery mechanism for failed operations
+* ♻️ Idempotent processing (duplicate-safe operations)
+* 🔒 Locking system with timeout handling
+* 📊 Reconciliation system for data consistency
+* 🧪 Automated test engine (PASS / FAIL)
+* 📈 Dashboard for system monitoring
+
+---
+
+## 🧠 Architecture
 
 ![Architecture](docs/diagrams/system_architecture.png)
 
-* **Service Layer** → business logic
-* **Policy Layer** → validation & rules
-* **Repository Layer** → data access
-* **Excel Sheets** → data storage
+The system follows a clean layered structure:
+
+* Service layer handles business logic
+* Policy layer enforces rules
+* Repository layer manages data
+* Excel sheets act as storage
 
 ---
 
@@ -45,17 +61,21 @@ A **layered, failure-aware Mini ERP system** built with **Excel VBA**, designed 
 
 ![Data Flow](docs/diagrams/data_flow.png)
 
-* Document creation
+A document operation flows through:
+
+* Creation
 * Validation
-* Stock operations
-* Ledger updates
+* Stock update
+* Ledger entry
 * Audit logging
 
 ---
 
-## 🔁 Document Lifecycle
+## 🔁 Lifecycle
 
 ![Lifecycle](docs/diagrams/lifecycle.png)
+
+Documents move through controlled states:
 
 * Draft → Posting → Posted
 * Cancel support
@@ -64,145 +84,83 @@ A **layered, failure-aware Mini ERP system** built with **Excel VBA**, designed 
 
 ---
 
-## 🧪 Test Engine (Live Demo)
-
-![Test Engine](assets/demo/test_engine_run.gif)
-
-* Automated test execution
-* PASS / FAIL results
-* Real error handling (e.g., insufficient stock, inactive product)
-
----
-
 ## 📊 Dashboard
 
 ![Dashboard](assets/screenshots/dashboard_overview.png)
 
-Displays:
+The system monitor displays:
 
 * Total stock
 * Product count
-* Ledger total
-* Last operation
+* Ledger totals
 * System status
-* Test results summary
+* Last operations
 
 ---
 
-## 📸 Test Results
+## 🧪 Test System
 
-### ✔️ Successful Run
+| ✔️ All Tests Passing | ❌ Failure Handling |
+|---------------------|-------------------|
+| ![](assets/screenshots/test_results_all_pass.png) | ![](assets/screenshots/test_results_failure_case.png) |
 
-![All Pass](assets/screenshots/test_results_all_pass.png)
+The test engine validates:
 
-### ❌ Failure Handling
-
-![Failure](assets/screenshots/test_results_failure_case.png)
-
----
-
-## 📁 Project Structure
-
-```text
-Mini-ERP-System/
-│
-├── docs/
-│   ├── architecture/
-│   │   └── architecture/Mini-ERP-Production-Architecture-Control-Report.docx
-│   │   └── architecture/Mini-ERP-Production-Architecture-Control-Report.pdf
-│   │
-│   ├── diagrams/
-│   │   ├── system_architecture.png
-│   │   ├── data_flow.png
-│   │   └── lifecycle.png
-│   │
-│   └── README.md
-│
-├── src/
-│   │
-│   ├── core/
-│   │   ├── Mod_EnvironmentSetup.bas
-│   │   ├── Mod_TestRunner.bas
-│   │   └── Mod_Utils.bas
-│   │
-│   ├── entities/
-│   │   ├── Ent_Product.cls
-│   │   ├── Ent_Document.cls
-│   │   ├── Ent_DocumentLine.cls
-│   │   ├── Ent_Ledger.cls
-│   │   ├── Ent_StockMovement.cls
-│   │   └── Ent_Transaction.cls
-│   │
-│   ├── services/
-│   │   ├── Svc_Product.cls
-│   │   ├── Svc_Document.cls
-│   │   ├── Svc_Stock.cls
-│   │   ├── Svc_Transaction.cls
-│   │   ├── Svc_Reconciliation.cls
-│   │   └── Svc_Governance.cls
-│   │
-│   ├── policies/
-│   │   └── Pol_Document.cls
-│   │
-│   ├── repositories/
-│   │   ├── Repo_Product.cls
-│   │   ├── Repo_Ledger.cls
-│   │   ├── Repo_Audit.cls
-│   │   ├── Repo_ProcessedOperations.cls
-│   │   └── Repo_StockMovement.cls
-│   │
-│   └── queries/
-│       ├── Qry_Product.cls
-│       ├── Qry_Stock.cls
-│       ├── Qry_Reconciliation.cls
-│       └── Qry_Dashboard.cls
-│
-├── assets/
-│   ├── screenshots/
-│   │   ├── dashboard_overview.png
-│   │   ├── test_results_all_pass.png
-│   │   └── test_results_failure_case.png
-│   │
-│   └── demo/
-│       └── test_engine_run.gif 
-│
-├── MiniERP_System.xlsm   
-│
-├── README.md
-└── .gitignore
-```
+* business rules
+* system integrity
+* error handling scenarios
 
 ---
 
 ## ⚙️ Tech Stack
 
-* **Excel VBA**
+* Excel VBA
 * Layered Architecture Design
-* Manual Data Storage (Excel Sheets)
+* Excel-based Data Storage
 * Custom Test & Monitoring System
 
 ---
 
-## 📌 Notes
+## 📂 Project Structure
 
-* This project focuses on **system design and reliability**, not UI
-* VBA code is exported as `.bas` and `.cls` files for version control
-* Designed to demonstrate **engineering thinking beyond CRUD applications**
+```text
+Mini-ERP-System/
+├── docs/
+├── src/
+├── assets/
+├── MiniERP_System.xlsm
+└── README.md
+```
 
 ---
 
-## 🎯 Why This Project?
+## 🎯 Purpose
 
 This project demonstrates:
 
-* Real-world system behavior simulation
-* Error handling & recovery design
-* Clean architecture principles in a constrained environment (Excel VBA)
+* system design in constrained environments
+* failure handling & retry logic
+* layered architecture principles
+* real-world backend simulation
 
 ---
 
-## 👤 Author
+## 💡 Why This Project?
 
-Developed as a portfolio project to showcase backend/system design skills using Excel VBA.
+This is not a simple CRUD system.
+
+It focuses on:
+
+* system behavior
+* consistency control
+* recoverability
+* architectural thinking
+
+---
+
+## 👤 Developer
+
+Mertcan Kayırıcı
+Backend-Focused Developer
 
 ---
