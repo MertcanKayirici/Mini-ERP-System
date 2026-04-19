@@ -108,3 +108,9 @@ The goal of this documentation is to:
 * Focus is on **system behavior, reliability, and structure** rather than UI
 
 ---
+
+## 🔗 Related
+
+Main project README: ../README.md
+
+---
