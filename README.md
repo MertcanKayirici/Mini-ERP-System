@@ -105,12 +105,71 @@ Displays:
 
 ```text
 Mini-ERP-System/
+│
 ├── docs/
+│   ├── architecture/
+│   │   └── architecture/Mini-ERP-Production-Architecture-Control-Report.docx
+│   │   └── architecture/Mini-ERP-Production-Architecture-Control-Report.pdf
+│   │
+│   ├── diagrams/
+│   │   ├── system_architecture.png
+│   │   ├── data_flow.png
+│   │   └── lifecycle.png
+│   │
+│   └── README.md
+│
 ├── src/
+│   │
+│   ├── core/
+│   │   ├── Mod_EnvironmentSetup.bas
+│   │   ├── Mod_TestRunner.bas
+│   │   └── Mod_Utils.bas
+│   │
+│   ├── entities/
+│   │   ├── Ent_Product.cls
+│   │   ├── Ent_Document.cls
+│   │   ├── Ent_DocumentLine.cls
+│   │   ├── Ent_Ledger.cls
+│   │   ├── Ent_StockMovement.cls
+│   │   └── Ent_Transaction.cls
+│   │
+│   ├── services/
+│   │   ├── Svc_Product.cls
+│   │   ├── Svc_Document.cls
+│   │   ├── Svc_Stock.cls
+│   │   ├── Svc_Transaction.cls
+│   │   ├── Svc_Reconciliation.cls
+│   │   └── Svc_Governance.cls
+│   │
+│   ├── policies/
+│   │   └── Pol_Document.cls
+│   │
+│   ├── repositories/
+│   │   ├── Repo_Product.cls
+│   │   ├── Repo_Ledger.cls
+│   │   ├── Repo_Audit.cls
+│   │   ├── Repo_ProcessedOperations.cls
+│   │   └── Repo_StockMovement.cls
+│   │
+│   └── queries/
+│       ├── Qry_Product.cls
+│       ├── Qry_Stock.cls
+│       ├── Qry_Reconciliation.cls
+│       └── Qry_Dashboard.cls
+│
 ├── assets/
-├── database/
-├── MiniERP_System.xlsm
-└── README.md
+│   ├── screenshots/
+│   │   ├── dashboard_overview.png
+│   │   ├── test_results_all_pass.png
+│   │   └── test_results_failure_case.png
+│   │
+│   └── demo/
+│       └── test_engine_run.gif 
+│
+├── MiniERP_System.xlsm   
+│
+├── README.md
+└── .gitignore
 ```
 
 ---
