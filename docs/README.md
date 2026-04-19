@@ -1,34 +1,39 @@
 # 📚 Documentation
 
-This folder contains the architectural and technical documentation of the **Mini ERP System**.
+This directory contains the **architectural, technical, and system-level documentation** of the **Mini ERP System**.
+
+It complements the source code by providing a clear explanation of **how the system is designed, structured, and operates internally**.
 
 ---
 
 ## 🏗️ Architecture Report
 
-Detailed system design and architectural decisions are documented in the following files:
+Detailed system design and architectural decisions are documented in:
 
-- 📄 **DOCX Version**  
+* 📄 **DOCX Version**
   `architecture/Mini-ERP-Production-Architecture-Control-Report.docx`
 
-- 📄 **PDF Version**  
+* 📄 **PDF Version**
   `architecture/Mini-ERP-Production-Architecture-Control-Report.pdf`
-
-### 📌 Content Includes:
-- System architecture overview
-- Layered design (Service / Policy / Repository)
-- Dependency rules and boundaries
-- Transaction management
-- Retry & recovery mechanisms
-- Idempotency strategy
-- Reconciliation logic
-- System constraints and decisions
 
 ---
 
-## 📊 Diagrams
+### 📌 Report Covers
 
-Visual representations of the system architecture and behavior.
+* System architecture overview
+* Layered design (Service / Policy / Repository)
+* Dependency rules and separation of concerns
+* Transaction lifecycle and flow
+* Retry & recovery mechanisms
+* Idempotency strategy
+* Reconciliation logic
+* Design decisions and constraints
+
+---
+
+## 📊 System Diagrams
+
+Visual representations of the system’s **structure and behavior**.
 
 ---
 
@@ -36,12 +41,12 @@ Visual representations of the system architecture and behavior.
 
 ![System Architecture](diagrams/system_architecture.png)
 
-Represents the layered architecture of the system:
+Illustrates the layered architecture:
 
-- Service Layer (business logic)
-- Policy Layer (validation & rules)
-- Repository Layer (data access)
-- Excel-based data storage
+* **Service Layer** → business logic
+* **Policy Layer** → validation and rules
+* **Repository Layer** → data access
+* **Excel Sheets** → data storage
 
 ---
 
@@ -49,13 +54,13 @@ Represents the layered architecture of the system:
 
 ![Data Flow](diagrams/data_flow.png)
 
-Illustrates how data flows through the system:
+Represents how data flows through the system:
 
-- Document creation
-- Validation
-- Stock operations
-- Ledger updates
-- Audit logging
+* Document creation
+* Validation pipeline
+* Stock operations
+* Ledger updates
+* Audit logging
 
 ---
 
@@ -63,30 +68,43 @@ Illustrates how data flows through the system:
 
 ![Lifecycle](diagrams/lifecycle.png)
 
-Shows the state transitions of a document:
+Defines the state transitions of a document:
 
-- Draft → Posting → Posted
-- Cancel flow
-- RecoveryRequired state
-- Retry mechanism
+* Draft → Posting → Posted
+* Cancel flow
+* RecoveryRequired state
+* Retry mechanism
+
+---
+
+## 🚀 Engineering Perspective
+
+This documentation highlights:
+
+* Separation of concerns through layered architecture
+* Controlled state transitions
+* Failure handling and recovery strategies
+* Consistency validation via reconciliation
+* System behavior beyond simple CRUD operations
 
 ---
 
 ## 🎯 Purpose
 
-This documentation is designed to:
+The goal of this documentation is to:
 
-- Explain the internal architecture clearly
-- Provide a quick understanding of system behavior
-- Support technical evaluation (e.g., interviews, reviews)
-- Demonstrate engineering thinking beyond basic CRUD systems
+* Provide a clear understanding of system design
+* Support technical evaluation (interviews, reviews)
+* Explain internal workflows and decisions
+* Demonstrate structured engineering thinking
 
 ---
 
 ## 🧠 Notes
 
-- The system is implemented in **Excel VBA**
-- Source code is structured using layered architecture principles
-- Documentation complements the codebase for better understanding
+* The system is implemented in **Excel VBA**
+* Architecture follows a **layered design approach**
+* Documentation is intended to complement the codebase
+* Focus is on **system behavior, reliability, and structure** rather than UI
 
 ---
